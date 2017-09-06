@@ -50,13 +50,11 @@ set(HEADERS_CRYPTO
     src/crypto/c_groestl.h
     src/crypto/c_jh.h
     src/crypto/c_keccak.h
-    src/crypto/c_skein.h
     src/crypto/CryptoNight.h
     src/crypto/CryptoNight_p.h
     src/crypto/CryptoNight_test.h
     src/crypto/groestl_tables.h
     src/crypto/hash.h
-    src/crypto/skein_port.h
    )
 
 set(SOURCES
@@ -90,7 +88,6 @@ set(SOURCES_CRYPTO
     src/crypto/c_groestl.c
     src/crypto/c_blake256.c
     src/crypto/c_jh.c
-    src/crypto/c_skein.c
     src/crypto/soft_aes.c
     src/crypto/soft_aes.c
     src/crypto/CryptoNight.cpp
@@ -141,10 +138,10 @@ endif()
 # https://cmake.org/cmake/help/latest/variable/CMAKE_LANG_COMPILER_ID.html
 if (CMAKE_CXX_COMPILER_ID MATCHES GNU)
 
-    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -maes -Wall -Wno-strict-aliasing")
+    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -march=armv8-a+crypto -Wall -Wno-strict-aliasing")
     set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -Ofast -funroll-loops -fvariable-expansion-in-unroller -ftree-loop-if-convert-stores -fmerge-all-constants -fbranch-target-load-optimize2")
 
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -maes -Wall -std=c++14 -fno-exceptions -fno-rtti")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -march=armv8-a+crypto -Wall -std=c++14 -fno-exceptions -fno-rtti")
     set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -Ofast -s -funroll-loops -fvariable-expansion-in-unroller -ftree-loop-if-convert-stores -fmerge-all-constants -fbranch-target-load-optimize2")
 
     if (WIN32)
@@ -166,10 +163,10 @@ elseif (CMAKE_CXX_COMPILER_ID MATCHES MSVC)
 
 elseif (CMAKE_CXX_COMPILER_ID MATCHES Clang)
 
-    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -maes -Wall")
+    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -march=armv8-a+crypto -Wall")
     set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -Ofast -funroll-loops -fmerge-all-constants")
 
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -maes -Wall -std=c++14 -fno-exceptions -fno-rtti")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -march=armv8-a+crypto -Wall -std=c++14 -fno-exceptions -fno-rtti")
     set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -Ofast -funroll-loops -fmerge-all-constants")
 
 endif()
