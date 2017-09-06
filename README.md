@@ -2,50 +2,7 @@
 XMRig is high performance Monero (XMR) CPU miner, with the official full Windows support.
 Originally based on cpuminer-multi with heavy optimizations/rewrites and removing a lot of legacy code, since version 1.0.0 complete rewritten from scratch on C++.
 
-* This is the CPU-mining version, there is also a [NVIDIA GPU version](https://github.com/xmrig/xmrig-nvidia).
-
-<img src="http://i.imgur.com/OKZRVDh.png" width="619" >
-
-#### Table of contents
-* [Features](#features)
-* [Download](#download)
-* [Usage](#usage)
-* [Algorithm variations](#algorithm-variations)
-* [Build](https://github.com/xmrig/xmrig/wiki/Build)
-* [Common Issues](#common-issues)
-* [Other information](#other-information)
-* [Donations](#donations)
-* [Contacts](#contacts)
-
-## Features
-* High performance.
-* Official Windows support.
-* Small Windows executable, without dependencies.
-* x86/x64 support.
-* Support for backup (failover) mining server.
-* keepalived support.
-* Command line options compatible with cpuminer.
-* CryptoNight-Lite support for AEON.
-* Smart automatic [CPU configuration](https://github.com/xmrig/xmrig/wiki/Threads).
-* Nicehash support
-* It's open source software.
-
-## Download
-* Binary releases: https://github.com/xmrig/xmrig/releases
-* Git tree: https://github.com/xmrig/xmrig.git
-  * Clone with `git clone https://github.com/xmrig/xmrig.git` :hammer: [Build instructions](https://github.com/xmrig/xmrig/wiki/Build).
-
-## Usage
-### Basic example
-```
-xmrig.exe -o pool.minemonero.pro:5555 -u YOUR_WALLET -p x -k
-```
-
-### Failover
-```
-xmrig.exe -o pool.minemonero.pro:5555 -u YOUR_WALLET1 -p x -k -o pool.supportxmr.com:5555 -u YOUR_WALLET2 -p x -k
-```
-For failover you can add multiple pools, maximum count not limited.
+* This is the ARMv8 CPU-mining version under development - do not use
 
 ### Options
 ```
@@ -97,22 +54,4 @@ Since version 0.8.0.
 
 
 ### CPU mining performance
-* **Intel i7-7700** - 307 H/s (4 threads)
-* **AMD Ryzen 7 1700X** - 560 H/s (8 threads)
-
-Please note performance is highly dependent on system load. The numbers above are obtained on an idle system. Tasks heavily using a processor cache, such as video playback, can greatly degrade hashrate. Optimal number of threads depends on the size of the L3 cache of a processor, 1 thread requires 2 MB of cache.
-
-### Maximum performance checklist
-* Idle operating system.
-* Do not exceed optimal thread count.
-* Use modern CPUs with AES-NI instructuon set.
-* Try setup optimal cpu affinity.
-* Enable fast memory (Large/Huge pages).
-
-## Donations
-* XMR: `48edfHu7V9Z84YzzMa6fUueoELZ9ZRXq9VetWzYGzKt52XU5xvqgzYnDK9URnRoJMk1j8nLwEVsaSWJ4fhdUyZijBGUicoD`
-* BTC: `1P7ujsXeX7GxQwHNnJsRMgAdNkFZmNVqJT`
-
-## Contacts
-* support@xmrig.com
-* [reddit](https://www.reddit.com/user/XMRig/)
+Under Development
