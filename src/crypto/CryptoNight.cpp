@@ -28,7 +28,7 @@
 #include "net/Job.h"
 #include "net/JobResult.h"
 #include "Options.h"
-
+#include "SSE2NEON.h"
 
 void (*cryptonight_hash_ctx)(const void *input, size_t size, void *output, cryptonight_ctx *ctx) = nullptr;
 

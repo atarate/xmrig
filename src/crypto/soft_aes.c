@@ -47,6 +47,8 @@
 
 #include <inttypes.h>
 
+#include "SSE2NEON.h"
+
 #define TABLE_ALIGN     32
 #define WPOLY           0x011b
 #define N_COLS          4

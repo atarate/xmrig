@@ -45,6 +45,7 @@
      #include <spe.h>
 #endif
 
+#include "SSE2NEON.h"
 
 #include "crypto/CryptoNight.h"
 
